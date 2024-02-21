@@ -3,5 +3,3 @@ matplotlib
 scikit-learn
 plotly
 numpy
-nbdev
-nbdim
