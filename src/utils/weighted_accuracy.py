@@ -1,3 +1,9 @@
+"""
+Weight function described in the instructions of the challenge :
+Section : Métrique d'évaluation des performances du modèle 
+https://challengedata.ens.fr/participants/challenges/140/
+"""
+
 from sklearn.metrics import make_scorer
 import numpy as np
 
