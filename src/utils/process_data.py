@@ -15,7 +15,7 @@ def process_data(dataframe, columns_to_remove=None, lines_to_remove=None, scaler
     # Set "DELIVERY_START" as the index
     if "DELIVERY_START" in dataframe.columns:
         dataframe.set_index("DELIVERY_START", inplace=True)
-        dataframe.index = pd.to_datetime(dataframe.index)
+        dataframe.index = pd.to_datetime(dataframe.index, utc = True)
     original_index = dataframe.index
     # Drop columns
     if columns_to_remove:
