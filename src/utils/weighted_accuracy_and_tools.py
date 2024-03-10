@@ -19,7 +19,11 @@ def reconstruct_y(y_direction, y_magnitude):
     :param y_magnitude: Numpy array ou une liste indiquant l'ampleur des écarts.
     :return: Numpy array des écarts reconstruits.
     """
-    sign_factors = y_direction * 2 - 1  # Convertit 0 en -1 et 1 reste 1
+    sign_factors = np.zeros_like(y_direction)  # Initialize with zeros
+    sign_factors[y_direction == 1] = 1  # Class 1 remains 1
+    sign_factors[y_direction == 0] = -1  # Class 0 becomes -1
+    # Unclassified (-1) becomes 0, which is already set by np.zeros_like()
+
     y_reconstructed = y_magnitude * sign_factors
     return y_reconstructed
 
