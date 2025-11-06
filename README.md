@@ -1,61 +1,63 @@
-# Elmy Predictive Solar Maintenance
+# ☀️ Elmy Predictive Solar Maintenance
 
-Forecast short-term electricity prices and asset conditions to support data-driven preventive actions on solar farms. This refreshed release highlights modern tooling, visuals, and reproducible workflows to make a strong impression during technical conversations with energy-focused recruiters.
+<p align="center">
+  <img src="docs/media/hero-dashboard.png" alt="Predictive maintenance control room dashboard" width="720"/>
+</p>
 
-## Visual Pipeline
-```mermaid
-flowchart LR
-    A[Raw Challenge Data<br/>CSV exports] --> B[Process Data CLI<br/>`src/utils/process_data.py`]
-    B --> C[Lag Builder<br/>`src/utils/lag_data.py`]
-    C --> D[Model Training<br/>Notebooks & Scripts]
-    D --> E[Weighted Accuracy Metric<br/>`src/utils/weighted_accuracy.py`]
-    D --> F[Learning Curve Reporter<br/>`src/utils/plot_learning_curves.py`]
-```
+> Forecast solar farm health, anticipate price swings, and help O&M teams act before downtime hits. Drop in your favourite dashboard screenshot at `docs/media/hero-dashboard.png` to wow recruiters.
 
-## Repository Map
+---
+
+## ✨ Highlights
+- 🔌 **Predictive maintenance ready:** engineered for solar inverter and tariff signals.
+- 🧰 **Reusable toolkit:** dataclass-powered utilities for cleaning, lag features, scoring, and learning-curve inspection.
+- 🧪 **Confidence built-in:** pytest coverage across preprocessing, feature engineering, metrics, and plotting.
+- 📊 **Recruiter-friendly visuals:** ready-made hooks to showcase notebooks and CLI exports in interviews.
+
+## 🗂 Repo Tour
 ```
 .
-├── src/utils/            # Production-ready tooling for ETL, features & scoring
-├── notebooks/            # Exploratory studies and model comparisons (archived)
-├── tests/                # pytest suite covering critical utilities
-├── docs/media/           # Visual assets referenced in presentations
-├── requirements.txt      # Version-pinned dependencies for easy setup
-└── AGENTS.md             # Contributor guidance for collaborators & agents
+├── src/utils/            # ETL, feature lags, scoring, plotting CLIs
+├── tests/                # pytest suite validating the toolkit
+├── notebooks/            # archived experiments & visual diagnostics
+├── docs/media/           # drop presentation-ready images here
+├── requirements.txt      # reproducible dependency set
+└── README.md             # you are here 😊
 ```
 
-## Quickstart
-1. Create an isolated environment  
+## ⚙️ Quickstart
+1. 🧪 Create an environment  
    `python -m venv env && source env/bin/activate`
-2. Install dependencies  
+2. 📦 Install dependencies  
    `pip install -r requirements.txt`
-3. Retrieve the ENS Challenge dataset and store raw files under `data/raw/`.
-4. Process and engineer features:
-   - Clean + scale data:  
-     `python src/utils/process_data.py --input data/raw/elmy.csv --output data/interim/clean.csv --scaler standard`
-   - Build lagged features:  
-     `python src/utils/lag_data.py --input data/interim/clean.csv --target-column price_delta --n-lags 24 --output-features data/interim/lagged.csv --output-target data/interim/target.csv`
-5. Train notebooks or scripts and visualise learning dynamics:  
-   `python src/utils/plot_learning_curves.py --model models/xgb.joblib --train data/interim/lagged_train.csv --validation data/interim/lagged_val.csv --target-column price_delta`
+3. 📥 Fetch ENS Challenge data → store raw files under `data/raw/`.
+4. 🧼 Clean & scale  
+   `python src/utils/process_data.py --input data/raw/elmy.csv --output data/interim/clean.csv --scaler standard`
+5. ⏱ Build lags  
+   `python src/utils/lag_data.py --input data/interim/clean.csv --target-column price_delta --n-lags 24 --output-features data/interim/lagged.csv --output-target data/interim/target.csv`
+6. 📈 Inspect learning curves  
+   `python src/utils/plot_learning_curves.py --model models/xgb.joblib --train data/interim/lagged_train.csv --validation data/interim/lagged_val.csv --target-column price_delta --save figures/learning_curve.png`
+7. ✅ Run tests  
+   `pytest`
 
-## Core Utilities at a Glance
-| Module | What it does | Example |
+## 🧠 Core Utilities
+| Emoji | Module | What it delivers |
 | --- | --- | --- |
-| `process_data.py` | Column pruning, NA imputation, scaling & CLI export | `ProcessConfig(scaler="standard")` |
-| `lag_data.py` | Structured lag generation for horizon tuning | `LagConfig(n_lags=24)` |
-| `weighted_accuracy.py` | Challenge-compliant custom scorer | `weighted_accuracy_scorer` |
-| `plot_learning_curves.py` | RMSE timeline with publication-ready styling | CLI export to `figures/learning_curve.png` |
+| 🧽 | `process_data.py` | Drop columns/rows, impute, scale, and export via CLI |
+| ⏳ | `lag_data.py` | Structured lag matrices with optional CLI batching |
+| 🎯 | `weighted_accuracy.py` | Challenge-compliant weighted accuracy scorer |
+| 📉 | `plot_learning_curves.py` | Publication-ready RMSE diagnostics (CLI + Matplotlib) |
 
-## Testing & Quality Guardrails
-- `pytest` suite (see `tests/`) validates preprocessing, feature engineering, metrics, and visual scripts.
-- `matplotlib` tests run headless (`Agg` backend) to keep CI deterministic.
-- Weighted accuracy helpers preserve backward compatibility while adding strict type checks and zero-division handling.
+```mermaid
+flowchart LR
+    A[Raw SCADA & tariff feeds] --> B[Process Data 🧽]
+    B --> C[Lag Builder ⏳]
+    C --> D[Model Training 🤖]
+    D --> E[Weighted Accuracy 🎯]
+    D --> F[Learning Curves 📉]
+```
 
-## Communicating Impact
-- Frame the solution as an operational lever for proactive inverter swaps, spare-part staging, and tariff hedging decisions.
-- Surface notebook visuals (e.g., `analyse_models.ipynb`, `enrich_and_visualize_data.ipynb`) during interviews to show iterative depth; consider renaming them with the `YYYYMMDD_topic.ipynb` convention before demo day.
-- Highlight that the tooling can plug into live telemetry streams, enabling condition-based maintenance for solar assets beyond the original pricing challenge.
-
-## Roadmap Ideas for the Role
-- Integrate SCADA health flags as additional covariates in `LagConfig`.
-- Extend the CLI suite with batch job templates for nightly forecasts.
-- Package the scoring metric as a lightweight service for on-site deployment.
+## 💬 Talking Points
+- Emphasise proactive inverter swaps, spare-part staging, and tariff hedging enabled by accurate forecasts.
+- Highlight notebooks like `analyse_models.ipynb` or `enrich_and_visualize_data.ipynb`; rename them with `YYYYMMDD_topic.ipynb` for a polished timeline.
+- Mention that the CLI-driven toolkit can plug into live telemetry streams to power condition-based maintenance.
