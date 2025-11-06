@@ -4,7 +4,7 @@
   <img src="docs/media/hero-dashboard.png" alt="Predictive maintenance control room dashboard" width="720"/>
 </p>
 
-> Forecast solar farm health, anticipate price swings, and help O&M teams act before downtime hits. Drop in your favourite dashboard screenshot at `docs/media/hero-dashboard.png` to wow recruiters.
+> Forecast solar farm health, anticipate price swings, and help O&M teams act before downtime hits. Swap in your own hero visual at `docs/media/hero-dashboard.png` to greet recruiters with a control-room snapshot or platform mock-up.
 
 ---
 
@@ -30,7 +30,7 @@
    `python -m venv env && source env/bin/activate`
 2. 📦 Install dependencies  
    `pip install -r requirements.txt`
-3. 📥 Fetch ENS Challenge data → store raw files under `data/raw/`.
+3. 📥 Fetch the [ENS Challenge Data – Elmy Electricity Price Forecast](https://challengedata.ens.fr/participants/challenges/140/) dataset → store raw files under `data/raw/`.
 4. 🧼 Clean & scale  
    `python src/utils/process_data.py --input data/raw/elmy.csv --output data/interim/clean.csv --scaler standard`
 5. ⏱ Build lags  
@@ -56,6 +56,12 @@ flowchart LR
     D --> E[Weighted Accuracy 🎯]
     D --> F[Learning Curves 📉]
 ```
+
+<p align="center">
+  <img src="docs/media/windfarm-ops.png" alt="Solar farm and wind turbines maintenance shot" width="520"/>
+  <br/>
+  <em>Drop a wind farm or field-ops image into <code>docs/media/windfarm-ops.png</code> to reinforce the renewable impact story.</em>
+</p>
 
 ## 💬 Talking Points
 - Emphasise proactive inverter swaps, spare-part staging, and tariff hedging enabled by accurate forecasts.
