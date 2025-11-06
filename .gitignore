@@ -3,6 +3,7 @@
 env*/
 data/
 *.zip
+!AGENTS.md
 
 
 # Byte-compiled / optimized / DLL files
