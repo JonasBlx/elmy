@@ -1,14 +1,10 @@
 # ☀️ Elmy Predictive Solar Maintenance
 
 <p align="center">
-  <img src="docs/media/windfarm.png" alt="Operational solar and wind farm at sunset" width="820"/>
+  <img src="docs/media/windfarm.png" alt="Operational solar and wind farm at sunset" width="620"/>
 </p>
 
-<p align="center">
-  <img src="docs/media/hero-dashboard.png" alt="Predictive maintenance control room dashboard" width="720"/>
-</p>
-
-> Forecast solar farm health, anticipate price swings, and help O&M teams act before downtime hits with a refreshed, production-ready toolkit.
+> Forecast solar farm health and anticipate price swings using a refreshed, production-ready toolkit built on the ENS Challenge Data – Elmy Electricity Price Forecast dataset.
 
 ---
 
@@ -52,16 +48,7 @@
 | 🎯 | `weighted_accuracy.py` | Challenge-compliant weighted accuracy scorer |
 | 📉 | `plot_learning_curves.py` | Publication-ready RMSE diagnostics (CLI + Matplotlib) |
 
-```mermaid
-flowchart LR
-    A[Raw SCADA & tariff feeds] --> B[Process Data 🧽]
-    B --> C[Lag Builder ⏳]
-    C --> D[Model Training 🤖]
-    D --> E[Weighted Accuracy 🎯]
-    D --> F[Learning Curves 📉]
-```
-
 ## 💬 Talking Points
-- Emphasise proactive inverter swaps, spare-part staging, and tariff hedging enabled by accurate forecasts.
-- Highlight notebooks like `analyse_models.ipynb` or `enrich_and_visualize_data.ipynb`; rename them with `YYYYMMDD_topic.ipynb` for a polished timeline.
-- Mention that the CLI-driven toolkit can plug into live telemetry streams to power condition-based maintenance.
+- Demonstrate the preprocessing, lag engineering, and evaluation steps with the refreshed CLIs.
+- Use notebooks such as `analyse_models.ipynb` to showcase experimentation and benchmarking workflow.
+- Emphasise the weighted accuracy metric alignment with the ENS challenge scoring.
