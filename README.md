@@ -58,7 +58,7 @@ flowchart LR
 ```
 
 <p align="center">
-  <img src="docs/media/windfarm-ops.png" alt="Solar farm and wind turbines maintenance shot" width="520"/>
+  <img src="docs/media/windfarm.jpeg" alt="Solar farm and wind turbines maintenance shot" width="520"/>
   <br/>
   <em>Drop a wind farm or field-ops image into <code>docs/media/windfarm-ops.png</code> to reinforce the renewable impact story.</em>
 </p>
