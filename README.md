@@ -1,10 +1,14 @@
 # ☀️ Elmy Predictive Solar Maintenance
 
 <p align="center">
+  <img src="docs/media/windfarm.png" alt="Operational solar and wind farm at sunset" width="820"/>
+</p>
+
+<p align="center">
   <img src="docs/media/hero-dashboard.png" alt="Predictive maintenance control room dashboard" width="720"/>
 </p>
 
-> Forecast solar farm health, anticipate price swings, and help O&M teams act before downtime hits. Swap in your own hero visual at `docs/media/hero-dashboard.png` to greet recruiters with a control-room snapshot or platform mock-up.
+> Forecast solar farm health, anticipate price swings, and help O&M teams act before downtime hits with a refreshed, production-ready toolkit.
 
 ---
 
@@ -56,12 +60,6 @@ flowchart LR
     D --> E[Weighted Accuracy 🎯]
     D --> F[Learning Curves 📉]
 ```
-
-<p align="center">
-  <img src="docs/media/windfarm.jpeg" alt="Solar farm and wind turbines maintenance shot" width="520"/>
-  <br/>
-  <em>Drop a wind farm or field-ops image into <code>docs/media/windfarm-ops.png</code> to reinforce the renewable impact story.</em>
-</p>
 
 ## 💬 Talking Points
 - Emphasise proactive inverter swaps, spare-part staging, and tariff hedging enabled by accurate forecasts.
